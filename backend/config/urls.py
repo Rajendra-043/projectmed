@@ -1,0 +1,217 @@
+"""
+URL configuration for config project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/6.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+from django.urls import path , include
+from django.views.generic import TemplateView
+
+
+from . import views
+
+urlpatterns = [
+
+    # -------------------------
+    # HOME
+    # -------------------------
+
+    path(
+        "",
+        views.home,
+        name="home"
+    ),
+
+
+    # -------------------------
+    # PATIENT
+    # -------------------------
+    
+    
+   
+    path(
+    "api/patients/",
+    include("patients.urls")
+    ),
+
+    path(
+    "api/ai/",
+    include("ai.urls")
+    ),
+
+    path(
+    "api/voice/",
+    include("voice.urls")
+    ),
+
+    path(
+    "api/doctor/",
+    include("doctor.urls")
+    ),
+
+    path(
+    "api/live/",
+    include("live.urls")
+    ),
+
+    path(
+    "ocr/",
+    include("ocr.urls")
+    ),
+
+    path(
+    "patient/abha/",
+    include("abdm.urls")
+    ),
+    
+    path(
+        "patient/",
+        views.patient_landing,
+        name="patient_landing"
+    ),
+
+    path(
+        "patient/login/",
+        views.patient_login,
+        name="patient_login"
+    ),
+
+    # --- LOGOUT YAHAN ADD HUA HAI ---
+    path(
+        "patient/logout/",
+        views.patient_logout,
+        name="patient_logout"
+    ),
+
+    path(
+        "patient/register/",
+        views.patient_register,
+        name="patient_register"
+    ),
+
+    path(
+    "patient/chatbot/",
+    views.patient_chatbot,
+    name="patient_chatbot"
+    ),
+
+    path(
+        "patient/dashboard/",
+        views.patient_dashboard,
+        name="patient_dashboard"
+    ),
+
+    path("patient/profile/",
+        views.profile, 
+        name="profile"),
+
+    path(
+        "patient/medical-history/",
+        views.medical_history,
+        name="medical_history"
+    ),
+
+    path(
+        "patient/medications/",
+        views.medications,
+        name="medications"
+    ),
+
+    path(
+        "patient/documents/",
+        views.documents,
+        name="documents"
+    ),
+
+
+    path(
+        "patient/documents/<int:doc_id>/",
+        views.document_detail,
+        name="document_detail"
+    ),
+
+
+
+    # --- DELETE DOCUMENT YAHAN PATIENT MEIN SHIFT KIYA ---
+    path(
+        "patient/documents/<int:doc_id>/delete/",
+        views.delete_document,
+        name="delete_document"
+    ),
+
+    path('patient/timeline/',
+        views.timeline,
+        name='timeline'),
+
+    # -------------------------
+    # DOCTOR
+    # -------------------------
+
+    path(
+        "doctor/",
+        views.doctor_landing,
+        name="doctor_landing"
+    ),
+
+    path(
+        "doctor/login/",
+        views.doctor_login,
+        name="doctor_login"
+    ),
+
+    path(
+        "doctor/register/",
+        views.doctor_register,
+        name="doctor_register"
+    ),
+
+    path("doctor/dashboard/",
+        views.doctor_dashboard,
+        name="doctor_dashboard"),
+
+    path(
+        "doctor/patient/<int:patient_id>/",
+        views.patient_detail,
+        name="patient_detail",
+        ),
+
+
+path(
+        "doctor/profile/",
+        views.doctor_profile,
+        name="doctor_profile"
+        ),
+
+    path(
+        "doctor/logout/",
+        views.doctor_logout,
+        name="doctor_logout"
+        ),
+    
+    # -------------------------
+    # ADMIN
+    # -------------------------
+
+    path(
+        "admin/",
+        admin.site.urls
+    ),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
