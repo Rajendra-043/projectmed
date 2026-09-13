@@ -86,3 +86,15 @@
 {"role": "assistant", "content": "Hello, I'm MediKiosk, your clinic assistant. I'm here to listen and help -- how are you feeling today? Could you share how you're feeling today?"}
 {"role": "user", "content": "मुझे अच्छा नहीं लग रहा है"}
 {"role": "assistant", "content": "आपके लक्षणों के बारे में क्या हो रहा है?"}
+{"role": "user", "content": "hello"}
+{"role": "assistant", "content": "Hello, I'm MediKiosk, your clinic assistant. I'm here to listen and help -- how are you feeling today? Could you share what brings you in today?"}
+{"role": "user", "content": "can you speak in Hindi"}
+{"role": "assistant", "content": "नमस्ते, मैं MediKiosk हूँ, आपका क्लिनिक सहायक। मैं यहाँ सुनने और मदद करने के लिए हूँ -- आप आज कैसा महसूस कर रहे हैं?"}
+{"role": "user", "content": "mere ko aaj Achcha Nahin lag raha hai aisa lag raha hai ki mere ko Bukhar hone wala hai"}
+{"role": "assistant", "content": "Bukhar hone ka kaaran kya hai? क्या आपको खाने में कोई असुविधा है या आपको खाने के बाद कोई लक्षण दिखाई दे रहे हैं?"}
+{"role": "user", "content": "हां मेरा पेट बहुत जल्दी भर जाता है और खाने का मन नहीं करता है"}
+{"role": "assistant", "content": "आपके पेट की समस्या को समझने में मदद करने के लिए, मैं आपको कुछ सवाल पूछना चाहता हूँ: क्या आपको पेट की दर्द से अचानक विकसित हुआ है? क्या आपको पेट की समस्या से"}
+{"role": "user", "content": "नहीं हां अचानक हुआ है"}
+{"role": "assistant", "content": "आपके पेट की समस्या के बारे में और जानकारी मांगने के लिए, मैं आपको एक और सवाल पूछना चाहता हूँ: क्या आपको पेट की समस्या से खाने के बाद कोई लक्षण दिखाई दे"}
+{"role": "user", "content": "मेरे को फिलहाल के लिए क्या लेना चाहिए अपने पेट को दर्द को दूर करने के लिए"}
+{"role": "assistant", "content": "आपके पेट को दर्द को दूर करने के लिए क्या खाना चाहते हैं?"}

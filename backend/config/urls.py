@@ -105,12 +105,17 @@ urlpatterns = [
     ),
 
     path(
-    "patient/chatbot/",
-    views.patient_chatbot,
-    name="patient_chatbot"
+        "patient/chatbot/",
+        views.patient_chatbot,
+        name="patient_chatbot"
     ),
 
     path(
+        "patient/ai-chatbot/",
+        views.patient_chatbot,
+        name="patient_ai_chatbot"
+    ),
+        path(
         "patient/dashboard/",
         views.patient_dashboard,
         name="patient_dashboard"
